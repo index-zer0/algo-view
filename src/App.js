@@ -24,9 +24,9 @@ const App = () => {
 					}}
 				/>
 				<Box
-					label="Insertion Sort"
+					label="Selection Sort"
 					sortingAlgo={async (array, setArray, withStep) => {
-						return await Sort.InsertionSort(
+						return await Sort.SelectionSort(
 							array,
 							setArray,
 							withStep
