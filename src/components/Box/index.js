@@ -1,13 +1,9 @@
 import React from "react";
 import "./styles.css";
 
-const sleep = (milliseconds: number) => {
-	return new Promise((resolve) => setTimeout(resolve, milliseconds));
-};
-
 const newArray = (setSorted: () => void): number[] => {
 	const arr = [];
-	while (arr.length < 10) {
+	while (arr.length < 20) {
 		var r = Math.floor(Math.random() * 255); // Math.floor(Math.random() * 16777215).toString(16);
 		if (arr.indexOf(r) === -1) arr.push(r);
 	}
@@ -15,79 +11,76 @@ const newArray = (setSorted: () => void): number[] => {
 	return arr;
 };
 
-interface sortProps {
-	array: number[];
-	setArray: () => void;
-	withStep: boolean;
-}
-
-const BubbleSort = async ({
-	array,
-	setArray,
-	withStep,
-}: sortProps): number[] => {
-	for (let i = 0; i < array.length - 1; i++) {
-		for (let j = 0; j < array.length - i - 1; j++) {
-			if (array[j] > array[j + 1]) {
-				const temp = array[j];
-				array[j] = array[j + 1];
-				array[j + 1] = temp;
-				await setArray([...array]);
-				await sleep(100);
-				if (withStep) {
-					return array;
-				}
-			}
-		}
+const numberToColor = (item, color): string => {
+	switch (color) {
+		case "red":
+			return "rgb(" + item + ",0,0)";
+		case "green":
+			return "rgb(0," + item + ",0)";
+		default:
+			return "rgb(0,0," + item + ")";
 	}
-	return array;
 };
 
-const Box = () => {
+interface BoxProps {
+	label: string;
+	sortingAlgo: () => void;
+	color: "red" | "green" | "blue";
+}
+
+const Box = ({ label, sortingAlgo, color = "blue" }: BoxProps) => {
 	const [array, setArray] = React.useState([]);
 	const [sorted, setSorted] = React.useState(false);
+	const [loading, setLoading] = React.useState(false);
 	React.useEffect(() => {
 		setArray(newArray(setSorted));
 	}, []);
 
 	const sort = async (withStep: boolean = false) => {
-		await BubbleSort({ array, setArray, withStep });
+		if (!withStep) {
+			setLoading(true);
+		}
+		await sortingAlgo({ array, setArray, withStep });
 		if (withStep) {
 			for (let i = 0; i < array.length - 1; i++) {
 				// this should change for descending
 				if (array[i] > array[i + 1]) {
 					// not sorted
+					setLoading(false);
 					return;
 				}
 			}
 		}
 		setSorted(true);
+		setLoading(false);
 	};
 	return (
-		<div className="container">
+		<div>
+			<h3 className="title">{label}</h3>
 			<div className="algo">
-				{/*displayArray(array)*/}
 				{array.map((item, index) => (
 					<Cell
 						key={index}
 						value={item}
-						color={"rgb(0,0," + item + ")"}
+						color={numberToColor(item, color)}
 					/>
 				))}
 			</div>
-			<button
-				className="button"
-				onClick={() => {
-					if (!sorted) {
-						sort();
-					} else {
-						setArray(newArray(setSorted));
-					}
-				}}
-			>
-				{!sorted ? "Sort" : "New array"}
-			</button>
-			{!sorted && (
+			{!loading && (
+				<button
+					className="button"
+					onClick={() => {
+						if (!sorted) {
+							sort();
+						} else {
+							setArray(newArray(setSorted));
+						}
+					}}
+				>
+					{!sorted ? "Sort" : "New array"}
+				</button>
+			)}
+			{!loading && !sorted && (
 				<button
 					className="button"
 					onClick={() => {
