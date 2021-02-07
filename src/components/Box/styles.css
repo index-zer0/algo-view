@@ -1,0 +1,23 @@
+.algo {
+	margin: 1rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.button {
+	margin: 1rem;
+}
+
+.cell {
+	width: 1rem;
+	padding: 1rem;
+	min-height: 1rem;
+	align-items: center;
+	justify-content: center;
+}
+
+.title {
+	color: rgb(1, 83, 83);
+}
