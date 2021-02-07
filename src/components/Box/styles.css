@@ -6,4 +6,25 @@
 	box-shadow: 12px 12px 30px 0px rgba(0, 0, 0, 0.4);
 	-webkit-box-shadow: 12px 12px 30px 0px rgba(0, 0, 0, 0.4);
 	-moz-box-shadow: 12px 12px 30px 0px rgba(0, 0, 0, 0.4);
+	flex-direction: column;
+}
+
+.algo {
+	margin: 1rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.button {
+	margin: 1rem;
+}
+
+.cell {
+	/*width: 5rem;*/
+	padding: 1rem;
+	min-height: 1rem;
+	align-items: center;
+	justify-content: center;
 }
