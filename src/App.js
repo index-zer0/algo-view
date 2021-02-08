@@ -6,7 +6,7 @@ const App = () => {
 	return (
 		<div className="App">
 			<Navbar>
-				<a href="/" className="logo">
+				<a href="/algo-view" className="logo">
 					Algo view
 				</a>
 				<NavItem icon="🖥️">

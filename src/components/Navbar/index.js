@@ -88,13 +88,19 @@ export const DropdownMenu = (props) => {
 					>
 						Go Back
 					</DropdownItem>
-					<DropdownItem leftIcon="💭" link="/sort/bubble">
+					<DropdownItem leftIcon="💭" link="/algo-view/sort/bubble">
 						Bubble Sort
 					</DropdownItem>
-					<DropdownItem leftIcon="🤏" link="/sort/selection">
+					<DropdownItem
+						leftIcon="🤏"
+						link="/algo-view/sort/selection"
+					>
 						Selection Sort
 					</DropdownItem>
-					<DropdownItem leftIcon="🗳️" link="/sort/insertion">
+					<DropdownItem
+						leftIcon="🗳️"
+						link="/algo-view/sort/insertion"
+					>
 						Insertion Sort
 					</DropdownItem>
 				</div>
