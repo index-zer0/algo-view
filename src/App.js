@@ -16,10 +16,13 @@ const App = () => {
 			<div className="content">
 				<Router basename="/">
 					<Switch>
-						<Route
+						{/*<Route
 							path="/algo-view/sort"
 							component={SortAlgorithms}
-						/>
+						/>*/}
+						<Route path="/algo-view/sort">
+							<div>Sort</div>
+						</Route>
 						<Route path="/algo-view">
 							<div className="container">Home</div>
 						</Route>
