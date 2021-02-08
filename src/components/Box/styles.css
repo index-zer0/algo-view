@@ -8,6 +8,15 @@
 
 .button {
 	margin: 1rem;
+	background-color: var(--primary);
+	border: none;
+	color: white;
+	padding: 1rem 2rem;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	border-radius: 0.1rem;
 }
 
 .cell {
@@ -19,5 +28,5 @@
 }
 
 .title {
-	color: rgb(1, 83, 83);
+	color: var(--primary);
 }
