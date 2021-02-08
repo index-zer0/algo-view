@@ -9,9 +9,6 @@ interface sortProps {
 const updateState = async ({ array, setArray, withStep }: sortProps): void => {
 	await setArray([...array]);
 	await sleep(100);
-	if (withStep) {
-		return array;
-	}
 };
 
 export const BubbleSort = async ({
@@ -26,6 +23,9 @@ export const BubbleSort = async ({
 				array[j] = array[j + 1];
 				array[j + 1] = temp;
 				await updateState({ array, setArray, withStep });
+				if (withStep) {
+					return array;
+				}
 			}
 		}
 	}
@@ -50,6 +50,9 @@ export const SelectionSort = async ({
 			array[i] = array[min];
 			array[min] = tmp;
 			await updateState({ array, setArray, withStep });
+			if (withStep) {
+				return array;
+			}
 		}
 	}
 	return array;
@@ -60,15 +63,18 @@ export const InsertionSort = async ({
 	setArray,
 	withStep,
 }: sortProps): number[] => {
-    for (let i = 1; i < array.length; i++) {
-        let key = array[i];
-        let j = i - 1;
-        while (j >= 0 && array[j] > key) {
-            array[j + 1] = array[j];
-            j = j - 1;
-        }
+	for (let i = 1; i < array.length; i++) {
+		let key = array[i];
+		let j = i - 1;
+		while (j >= 0 && array[j] > key) {
+			array[j + 1] = array[j];
+			j = j - 1;
+		}
 		array[j + 1] = key;
 		await updateState({ array, setArray, withStep });
-    }
-    return array;
+		if (withStep) {
+			return array;
+		}
+	}
+	return array;
 };

@@ -102,7 +102,7 @@ const Cell = ({ value, color }) => {
 			style={{ backgroundColor: color, color: "white" }}
 			className="cell"
 		>
-			{value}
+			<div>{value}</div>
 		</div>
 	);
 };
