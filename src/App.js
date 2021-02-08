@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import { Navbar, NavItem, DropdownMenu, SortAlgorithms } from "./components";
 import "./App.css";
 
@@ -14,18 +14,12 @@ const App = () => {
 				</NavItem>
 			</Navbar>
 			<div className="content">
-				<Router basename="/">
+				<Router basename={process.env.PUBLIC_URL}>
 					<Switch>
-						{/*<Route
-							path="/algo-view/sort"
-							component={SortAlgorithms}
-						/>*/}
-						<Route path="/algo-view/sort">
-							<div>Sort</div>
-						</Route>
-						<Route path="/algo-view">
+						<Route exact path="/">
 							<div className="container">Home</div>
 						</Route>
+						<Route path="/sort" component={SortAlgorithms} />
 					</Switch>
 				</Router>
 			</div>

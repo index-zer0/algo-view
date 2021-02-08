@@ -8,12 +8,12 @@ import "./styles.css";
 const SortAlgorithms = () => {
 	return (
 		<div>
-			<Route path="/algo-view/sort">
+			<Route path="/sort">
 				<div>Sort</div>
 			</Route>
-			<Route path="/algo-view/sort/bubble" component={BubbleSort} />
-			<Route path="/algo-view/sort/selection" component={SelectionSort} />
-			<Route path="/algo-view/sort/insertion" component={InsertionSort} />
+			<Route exact path="/sort/bubble" component={BubbleSort} />
+			<Route exact path="/sort/selection" component={SelectionSort} />
+			<Route exact path="/sort/insertion" component={InsertionSort} />
 		</div>
 	);
 };

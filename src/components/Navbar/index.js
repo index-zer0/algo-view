@@ -16,9 +16,9 @@ export const NavItem = (props) => {
 
 	return (
 		<li className="nav-item">
-			<a href="#" className="icon-button" onClick={() => setOpen(!open)}>
+			<div className="icon-button" onClick={() => setOpen(!open)}>
 				{props.icon}
-			</a>
+			</div>
 			{open && props.children}
 		</li>
 	);
@@ -27,7 +27,8 @@ export const NavItem = (props) => {
 const DropdownItem = (props) => {
 	return (
 		<a
-			href={props.link ? props.link : "#"}
+			// eslint-disable-next-line no-script-url
+			href={props.link ? props.link : "javascript:void(0);"}
 			className="menu-item"
 			onClick={props.onClick}
 		>
@@ -88,18 +89,18 @@ export const DropdownMenu = (props) => {
 					>
 						Go Back
 					</DropdownItem>
-					<DropdownItem leftIcon="💭" link="/algo-view/sort/bubble">
+					<DropdownItem leftIcon="💭" link="/algo-view/#/sort/bubble">
 						Bubble Sort
 					</DropdownItem>
 					<DropdownItem
 						leftIcon="🤏"
-						link="/algo-view/sort/selection"
+						link="/algo-view/#/sort/selection"
 					>
 						Selection Sort
 					</DropdownItem>
 					<DropdownItem
 						leftIcon="🗳️"
-						link="/algo-view/sort/insertion"
+						link="/algo-view/#/sort/insertion"
 					>
 						Insertion Sort
 					</DropdownItem>
