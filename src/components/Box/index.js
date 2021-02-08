@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles.css";
 
-const newArray = (setSorted: () => void): number[] => {
+export const newArray = (setSorted: () => void): number[] => {
 	const arr = [];
 	while (arr.length < 20) {
 		var r = Math.floor(Math.random() * 255); // Math.floor(Math.random() * 16777215).toString(16);
@@ -11,7 +11,7 @@ const newArray = (setSorted: () => void): number[] => {
 	return arr;
 };
 
-const numberToColor = (item, color): string => {
+export const numberToColor = (item, color): string => {
 	switch (color) {
 		case "red":
 			return "rgb(" + item + ",0,0)";
@@ -22,7 +22,7 @@ const numberToColor = (item, color): string => {
 	}
 };
 
-interface BoxProps {
+export interface BoxProps {
 	label: string;
 	sortingAlgo: () => void;
 	color: "red" | "green" | "blue";
@@ -96,7 +96,7 @@ const Box = ({ label, sortingAlgo, color = "blue" }: BoxProps) => {
 
 export default Box;
 
-const Cell = ({ value, color }) => {
+export const Cell = ({ value, color }) => {
 	return (
 		<div
 			style={{ backgroundColor: color, color: "white" }}

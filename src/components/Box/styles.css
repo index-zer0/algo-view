@@ -6,6 +6,14 @@
 	justify-content: center;
 }
 
+.algo-group {
+	margin: 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
 .button {
 	margin: 1rem;
 	background-color: var(--primary);

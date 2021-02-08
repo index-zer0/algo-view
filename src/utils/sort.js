@@ -11,6 +11,14 @@ const updateState = async ({ array, setArray, withStep }: sortProps): void => {
 	await sleep(100);
 };
 
+const updateAppendState = async ({ array, left, right, setArray, withStep }) => {
+	array.push(left);
+	array.push(right);
+	await setArray([...array]);
+	await sleep(100);
+}
+
+
 export const BubbleSort = async ({
 	array,
 	setArray,
@@ -84,23 +92,29 @@ export const QuickSort = async ({
 	array,
 	setArray,
 	withStep,
-}: sortProps): number[] => {
-
-	if (array.length <= 1) {
-		return array;
+}: sortProps, arr): number[] => {
+	if (!arr) {
+		arr = array[0]
 	}
-	var pivot = array[0];
-
-	var left = [];
-	var right = [];
-
-	for (var i = 1; i < array.length; i++) {
-		array[i] < pivot ? left.push(array[i]) : right.push(array[i]);
+	if (arr.length <= 1) {
+		return arr;
 	}
-	await updateState({ array, setArray, withStep });
+	var pivot = arr[0];
+
+	const left = [];
+	const right = [];
+
+
+	for (var i = 1; i < arr.length; i++) {
+		arr[i] < pivot ? left.push(arr[i]) : right.push(arr[i]);
+	}
+
+	await updateAppendState({ array, left, right, setArray, withStep });
+
+
 	if (withStep) {
-		return array;
+		return arr;
 	}
 
-	return QuickSort(left).concat(pivot, QuickSort(right));
+	return (await QuickSort({ array, setArray, withStep }, arr)).concat(pivot, await QuickSort({ array, setArray, withStep }, arr));
 };

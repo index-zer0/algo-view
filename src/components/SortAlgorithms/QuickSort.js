@@ -1,5 +1,5 @@
 import React from "react";
-import Box from "../Box";
+import BoxRecursion from "../BoxRecursion";
 import * as Sort from "../../utils";
 import "./styles.css";
 
@@ -7,7 +7,7 @@ const QuickSort = () => {
     return (
         <div>
             <div className="container" style={{ marginTop: "1rem" }}>
-                <Box
+                <BoxRecursion
                     label="Quick Sort"
                     sortingAlgo={async (array, setArray, withStep) => {
                         return await Sort.QuickSort(

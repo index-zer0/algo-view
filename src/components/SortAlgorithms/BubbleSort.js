@@ -3,7 +3,15 @@ import Box from "../Box";
 import * as Sort from "../../utils";
 import "./styles.css";
 
+const code = {
+	C: "#include<stdio>",
+	CPP: "#include<iostream>",
+	PYTHON: "import math"
+};
+
+
 const BubbleSort = () => {
+	const [lang, setLang] = React.useState("C");
 	return (
 		<div>
 			<div className="container" style={{ marginTop: "1rem" }}>
@@ -47,8 +55,25 @@ const BubbleSort = () => {
 					</tbody>
 				</table>
 			</div>
+			<div
+				className="container"
+				style={{ marginTop: "1rem", paddingBottom: "1rem" }}
+			>
+
+				<h2>Time for some code</h2>
+
+				<div class="tab">
+					<button class="tablinks" onClick={() => setLang("C")}> C</button>
+					<button class="tablinks" onClick={() => setLang("CPP")}> C++</button>
+					<button class="tablinks" onClick={() => setLang("Python")}> Python</button>
+				</div>
+				{lang === "C" && <div>{code.C}</div>}
+				{lang === "CPP" && <div>{code.CPP}</div>}
+				{lang === "Python" && <div>{code.PYTHON}</div>}
+			</div>
 		</div>
 	);
 };
 
 export default BubbleSort;
+
