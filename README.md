@@ -1,3 +1,5 @@
+![Deployment](https://github.com/index-zer0/algo-view/workflows/Deployment/badge.svg)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
