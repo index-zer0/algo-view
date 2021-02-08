@@ -78,3 +78,29 @@ export const InsertionSort = async ({
 	}
 	return array;
 };
+
+
+export const QuickSort = async ({
+	array,
+	setArray,
+	withStep,
+}: sortProps): number[] => {
+
+	if (array.length <= 1) {
+		return array;
+	}
+	var pivot = array[0];
+
+	var left = [];
+	var right = [];
+
+	for (var i = 1; i < array.length; i++) {
+		array[i] < pivot ? left.push(array[i]) : right.push(array[i]);
+	}
+	await updateState({ array, setArray, withStep });
+	if (withStep) {
+		return array;
+	}
+
+	return QuickSort(left).concat(pivot, QuickSort(right));
+};

@@ -104,6 +104,12 @@ export const DropdownMenu = (props) => {
 					>
 						Insertion Sort
 					</DropdownItem>
+					<DropdownItem
+						leftIcon="🤏"
+						link="/algo-view/#/sort/quick"
+					>
+						Quick Sort
+					</DropdownItem>
 				</div>
 			</CSSTransition>
 		</div>
