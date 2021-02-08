@@ -14,13 +14,13 @@ const App = () => {
 				</NavItem>
 			</Navbar>
 			<div className="content">
-				<Router>
+				<Router basename="/">
 					<Switch>
 						<Route
 							path="/algo-view/sort"
 							component={SortAlgorithms}
 						/>
-						<Route path="/">
+						<Route path="/algo-view">
 							<div className="container">Home</div>
 						</Route>
 					</Switch>
