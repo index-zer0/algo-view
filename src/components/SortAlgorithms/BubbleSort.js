@@ -21,26 +21,30 @@ const BubbleSort = () => {
 			>
 				<h3>Algorithm</h3>
 				<table>
-					<tr>
-						<th>Case</th>
-						<th>Comparisons</th>
-						<th>Swaps</th>
-					</tr>
-					<tr>
-						<th>Worst</th>
-						<th>O(n&#178;)</th>
-						<th>O(n&#178;)</th>
-					</tr>
-					<tr>
-						<th>Best</th>
-						<th>O(n)</th>
-						<th>1</th>
-					</tr>
-					<tr>
-						<th>Average</th>
-						<th>O(n&#178;)</th>
-						<th>O(n&#178;)</th>
-					</tr>
+					<thead>
+						<tr>
+							<th>Case</th>
+							<th>Comparisons</th>
+							<th>Swaps</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>Worst</th>
+							<th>O(n&#178;)</th>
+							<th>O(n&#178;)</th>
+						</tr>
+						<tr>
+							<th>Best</th>
+							<th>O(n)</th>
+							<th>1</th>
+						</tr>
+						<tr>
+							<th>Average</th>
+							<th>O(n&#178;)</th>
+							<th>O(n&#178;)</th>
+						</tr>
+					</tbody>
 				</table>
 			</div>
 		</div>

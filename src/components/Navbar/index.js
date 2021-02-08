@@ -13,9 +13,27 @@ const Navbar = (props) => {
 
 export const NavItem = (props) => {
 	const [open, setOpen] = React.useState(false);
+	const wrapperRef = React.useRef(null);
+
+	React.useEffect(() => {
+		const handleClickOutside = (event) => {
+			if (
+				open &&
+				wrapperRef.current &&
+				!wrapperRef.current.contains(event.target)
+			) {
+				setOpen(false);
+			}
+		};
+
+		document.addEventListener("mousedown", handleClickOutside);
+		return () => {
+			document.removeEventListener("mousedown", handleClickOutside);
+		};
+	}, [wrapperRef, open]);
 
 	return (
-		<li className="nav-item">
+		<li className="nav-item" ref={wrapperRef}>
 			<div className="icon-button" onClick={() => setOpen(!open)}>
 				{props.icon}
 			</div>
@@ -28,7 +46,7 @@ const DropdownItem = (props) => {
 	return (
 		<a
 			// eslint-disable-next-line no-script-url
-			href={props.link ? props.link : "javascript:void(0);"}
+			href={props.link ? props.link : null}
 			className="menu-item"
 			onClick={props.onClick}
 		>
@@ -67,7 +85,6 @@ export const DropdownMenu = (props) => {
 						leftIcon="〽️"
 						rightIcon="➡️"
 						onClick={() => {
-							console.log("hello");
 							setActiveMenu("settings");
 						}}
 					>
