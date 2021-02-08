@@ -20,5 +20,7 @@ jobs:
             - name: Install Packages
               run: yarn
             - name: Build and deploy to gh-pages
-              run: git remote set-url origin https://hectortav:${{secrets.ACCESS_TOKEN}}@github.com/index-zer0/algo-view |
+              run: git config --global user.email "tavhector@gmail.com" |
+                git config --global user.name "hectortav" |
+                git remote set-url origin https://hectortav:${{secrets.ACCESS_TOKEN}}@github.com/index-zer0/algo-view |
                 yarn deploy
