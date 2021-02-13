@@ -4,7 +4,7 @@ import * as Sort from "../../utils";
 import "./styles.css";
 
 const code = {
-	C: "#include<stdio>",
+	C: "void bubbleSort(int arr[], int n)",
 	CPP: "#include<iostream>",
 	PYTHON: "import math"
 };
@@ -62,10 +62,10 @@ const BubbleSort = () => {
 
 				<h2>Time for some code</h2>
 
-				<div class="tab">
-					<button class="tablinks" onClick={() => setLang("C")}> C</button>
-					<button class="tablinks" onClick={() => setLang("CPP")}> C++</button>
-					<button class="tablinks" onClick={() => setLang("Python")}> Python</button>
+				<div className="tab">
+					<button className="tablinks" onClick={() => setLang("C")}> C</button>
+					<button className="tablinks" onClick={() => setLang("CPP")}> C++</button>
+					<button className="tablinks" onClick={() => setLang("Python")}> Python</button>
 				</div>
 				{lang === "C" && <div>{code.C}</div>}
 				{lang === "CPP" && <div>{code.CPP}</div>}

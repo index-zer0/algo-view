@@ -109,12 +109,16 @@ export const QuickSort = async ({
 		arr[i] < pivot ? left.push(arr[i]) : right.push(arr[i]);
 	}
 
-	await updateAppendState({ array, left, right, setArray, withStep });
 
+
+	await updateAppendState({ array, left, right, setArray, withStep });
+	console.log("array" + array);
+	console.log("arr" + arr);
 
 	if (withStep) {
 		return arr;
 	}
+
 
 	return (await QuickSort({ array, setArray, withStep }, arr)).concat(pivot, await QuickSort({ array, setArray, withStep }, arr));
 };
