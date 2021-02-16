@@ -11,7 +11,7 @@ const App = () => {
 					Algo view
 				</a>
 				<div className="topnav" id="myTopnav">
-					<a href="#home" className="active">Home</a>
+					<a href="#home">Home</a>
 					<a href="#news">News</a>
 					<a href="#contact">Contact</a>
 					<a href="#about">About</a>
@@ -19,13 +19,10 @@ const App = () => {
 
 				<div>
 					<input type="checkbox" className="checkbox" id="chk" />
-					<label className="label" for="chk">
-						<i className="fas fa-moon"></i>
-						<i className="fas fa-sun"></i>
+					<label className="label" htmlFor="chk">
 						<div className="ball"></div>
 					</label>
 				</div>
-
 
 				<NavItem icon="🖥️">
 					<DropdownMenu />
@@ -49,7 +46,7 @@ const App = () => {
 										<li><a className="url" href="url">Quick Sort</a></li>
 									</ul>
 									<br></br>
-									<button class="button" >Go</button>
+									<button className="button" >Go</button>
 								</div>
 							</div>
 							<div className="card" style={{ marginLeft: "1rem", marginTop: "5rem" }}>
@@ -65,13 +62,13 @@ const App = () => {
 										<li><a className="url" href="url">Djikstra's</a></li>
 									</ul>
 									<br></br>
-									<button class="button" >Go</button>
+									<button className="button" >Go</button>
 								</div>
 							</div>
 							<div className="card" style={{ marginLeft: "1rem", marginTop: "5rem" }}>
 
 								<div className="header">
-									<p>Calculatos</p>
+									<p>Calculators</p>
 								</div>
 								<div className="container">
 									<ul>
@@ -81,7 +78,7 @@ const App = () => {
 										<li><a className="url" href="url">Discrete Mathematics</a></li>
 									</ul>
 									<br></br>
-									<button class="button" >Go</button>
+									<button className="button" >Go</button>
 								</div>
 							</div>
 
@@ -90,26 +87,19 @@ const App = () => {
 					</Switch>
 				</Router>
 			</div>
-
 		</div>
 	);
 };
-function myFunction() {
-	var x = document.getElementById("myTopnav");
-	if (x.className === "topnav") {
-		x.className += " responsive";
-	} else {
-		x.className = "topnav";
-	}
-}
-/*
+
+
 const chk = document.getElementById('chk');
 if (chk) {
-				chk.addEventListener('change', () => {
-					document.body.classList.toggle('dark');
-				});
-
+	chk.addEventListener('change', () => {
+		document.body.classList.toggle('light');
+	});
 }
-*/
+
+
+
 
 export default App;
