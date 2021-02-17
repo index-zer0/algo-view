@@ -73,6 +73,8 @@
 	margin-right: auto;
 	margin-left: 1rem;
 }
+/* cards */
+
 .card {
     width: 22%;
     display: flex;
@@ -109,7 +111,7 @@ ul li{
 	border-radius: 30px;
 
 }
-
+/* dark mode */
 * {
 	box-sizing: border-box;
 }
@@ -117,11 +119,17 @@ ul li{
 body{
 	background-color: var(--bg);
 	color:var(--text-color);
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	margin: 0;
+	transition: background 0.2s linear;
 }
 
-body.light {
+body.dark {
 	background: var(--text-color);
 	color: var(--bg);
+	
 }
 
 .checkbox {
@@ -156,3 +164,36 @@ body.light {
 }
 
 
+.checkbox:checked + .label .ball {
+	transform: translateX(24px);
+}
+
+/*language switcher*/
+
+#en {
+	display: none;
+  }
+  
+  .button_lang {
+	background-color: #444;
+	color: #FFF;
+	padding: 8px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+
+	
+	-webkit-transition: background-color .3s ease-in-out;
+	-moz-transition: background-color .3s ease-in-out;
+	-o-transition: background-color .3s ease-in-out;
+	-ms-transition: background-color .3s ease-in-out;
+	transition: background-color .3s ease-in-out;
+  }
+  .button_lang:hover, .current_lang {
+	/*display : none;*/
+	background-color: #777; 
+	-webkit-transition: background-color .3s ease-in-out;
+	-moz-transition: background-color .3s ease-in-out;
+	-o-transition: background-color .3s ease-in-out;
+	-ms-transition: background-color .3s ease-in-out;
+	transition: background-color .3s ease-in-out;
+  }

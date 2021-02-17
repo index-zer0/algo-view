@@ -1,6 +1,7 @@
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
-import { Navbar, NavItem, DropdownMenu, SortAlgorithms } from "./components";
+import { Navbar, NavItem, DropdownMenu, SortAlgorithms, Link } from "./components";
 import "./App.css";
+
 
 const App = () => {
 	return (
@@ -10,6 +11,8 @@ const App = () => {
 				<a href="/algo-view" className="logo">
 					Algo view
 				</a>
+
+
 				<div className="topnav" id="myTopnav">
 					<a href="#home">Home</a>
 					<a href="#news">News</a>
@@ -29,15 +32,18 @@ const App = () => {
 				</NavItem>
 
 			</Navbar>
+
 			<div className="content">
 				<Router basename={process.env.PUBLIC_URL}>
 					<Switch>
 						<Route exact path="/">
+
 							<div className="card" style={{ marginTop: "5rem" }}>
 
 								<div className="header">
 									<p>Sorting Algorithms</p>
 								</div>
+
 								<div className="container">
 									<ul>
 										<li><a className="url" href="url">Bubble Sort</a></li>
@@ -81,6 +87,12 @@ const App = () => {
 									<button className="button" >Go</button>
 								</div>
 							</div>
+							<h1 id="gr">Ελληνικά</h1>
+							<h1 id="en">English</h1>
+							<ul class="social">
+								<li id="gr_click" class="button_lang current_lang">Gr</li>
+								<li id="en_click" class="button_lang">En</li>
+							</ul>
 
 						</Route>
 						<Route path="/sort" component={SortAlgorithms} />
@@ -92,14 +104,63 @@ const App = () => {
 };
 
 
-const chk = document.getElementById('chk');
-if (chk) {
+/*dark mode*/
+window.onload = function () {
+	const chk = document.getElementById('chk');
 	chk.addEventListener('change', () => {
-		document.body.classList.toggle('light');
+		document.body.classList.toggle('dark');
 	});
 }
 
 
+/*language switcher*/
+var greek = document.getElementById('gr_click'),
+	english = document.getElementById('en_click'),
+	gr_txt = document.querySelectorAll('#gr'),
+	en_txt = document.querySelectorAll('#en'),
+	nb_gr = gr_txt.length,
+	nb_en = en_txt.length;
+
+if (greek) {
+	greek.addEventListener('click', function () {
+		langue(greek, english);
+	}, false);
+
+}
+
+if (english) {
+	english.addEventListener('click', function () {
+		langue(english, greek);
+	}, false);
+}
 
 
+function langue(langueOn, langueOff) {
+	if (langueOn) {
+		if (!langueOn.classList.contains('current_lang')) {
+			langueOn.classList.toggle('current_lang');
+			langueOff.classList.toggle('current_lang');
+		}
+
+		if (langueOn.innerHTML == 'Gr') {
+			for (var i = 0; i < nb_gr; i++) {
+				gr_txt[i].style.display = 'block';
+			}
+			for (var i = 0; i < nb_en; i++) {
+				en_txt[i].style.display = 'none';
+			}
+		}
+		else if (langueOn.innerHTML == 'En') {
+			for (var i = 0; i < nb_en; i++) {
+				en_txt[i].style.display = 'block';
+			}
+			for (var i = 0; i < nb_gr; i++) {
+				gr_txt[i].style.display = 'none';
+			}
+		}
+	}
+
+}
+
+langue(greek, english);
 export default App;
