@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/algo-view/static/css/main.4c086a56.chunk.css",
-    "main.js": "/algo-view/static/js/main.7e229985.chunk.js",
-    "main.js.map": "/algo-view/static/js/main.7e229985.chunk.js.map",
+    "main.css": "/algo-view/static/css/main.3e9c2cf8.chunk.css",
+    "main.js": "/algo-view/static/js/main.ea1fd80a.chunk.js",
+    "main.js.map": "/algo-view/static/js/main.ea1fd80a.chunk.js.map",
     "runtime-main.js": "/algo-view/static/js/runtime-main.0711fa04.js",
     "runtime-main.js.map": "/algo-view/static/js/runtime-main.0711fa04.js.map",
     "static/js/2.628ee1ea.chunk.js": "/algo-view/static/js/2.628ee1ea.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.f12ed06e.chunk.js": "/algo-view/static/js/3.f12ed06e.chunk.js",
     "static/js/3.f12ed06e.chunk.js.map": "/algo-view/static/js/3.f12ed06e.chunk.js.map",
     "index.html": "/algo-view/index.html",
-    "static/css/main.4c086a56.chunk.css.map": "/algo-view/static/css/main.4c086a56.chunk.css.map",
+    "static/css/main.3e9c2cf8.chunk.css.map": "/algo-view/static/css/main.3e9c2cf8.chunk.css.map",
     "static/js/2.628ee1ea.chunk.js.LICENSE.txt": "/algo-view/static/js/2.628ee1ea.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.0711fa04.js",
     "static/js/2.628ee1ea.chunk.js",
-    "static/css/main.4c086a56.chunk.css",
-    "static/js/main.7e229985.chunk.js"
+    "static/css/main.3e9c2cf8.chunk.css",
+    "static/js/main.ea1fd80a.chunk.js"
   ]
 }
