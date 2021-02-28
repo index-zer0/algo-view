@@ -87,13 +87,14 @@ const App = () => {
 									<button className="button" >Go</button>
 								</div>
 							</div>
-							<h1 id="gr">Ελληνικά</h1>
-							<h1 id="en">English</h1>
-							<ul class="social">
-								<li id="gr_click" class="button_lang current_lang">Gr</li>
-								<li id="en_click" class="button_lang">En</li>
-							</ul>
-
+							{/*<div>
+								<h1 id="gr">Ελληνικά</h1>
+								<h1 id="en">English</h1>
+								<ul className="social">
+									<li id="gr_click" className="button_lang current_lang">Gr</li>
+									<li id="en_click" className="button_lang">En</li>
+								</ul>
+							</div>*/}
 						</Route>
 						<Route path="/sort" component={SortAlgorithms} />
 					</Switch>

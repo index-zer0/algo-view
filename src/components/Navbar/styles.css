@@ -52,7 +52,6 @@
 	background-color: var(--bg);
 	border: var(--border);
 	border-radius: var(--border-radius);
-	padding: 1rem;
 	overflow: hidden;
 	transition: height var(--speed) ease;
 }
@@ -67,7 +66,8 @@
 	align-items: center;
 	border-radius: var(--border-radius);
 	transition: background var(--speed);
-	padding: 0.5rem;
+	padding: 0.8rem;
+
 }
 
 .menu-item .icon-button {
@@ -109,8 +109,7 @@
 	transform: translateX(0%);
 	transition: all var(--speed) ease;
 }
-.menu-secondary-exit {
-}
+
 .menu-secondary-exit-active {
 	transform: translateX(110%);
 	transition: all var(--speed) ease;

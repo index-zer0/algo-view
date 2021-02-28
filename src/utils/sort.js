@@ -71,7 +71,8 @@ export const InsertionSort = async ({
 	setArray,
 	withStep,
 }: sortProps): number[] => {
-	for (let i = 1; i < array.length; i++) {
+	let len = array.length;
+	for (let i = 1; i < len; i++) {
 		let key = array[i];
 		let j = i - 1;
 		while (j >= 0 && array[j] > key) {

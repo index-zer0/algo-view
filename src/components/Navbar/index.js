@@ -79,7 +79,7 @@ export const DropdownMenu = (props) => {
 				classNames="menu-primary"
 				onEnter={calcHeight}
 			>
-				<div className="menu">
+				<div className="menu" >
 					<DropdownItem>placeholder</DropdownItem>
 					<DropdownItem
 						leftIcon="〽️"
