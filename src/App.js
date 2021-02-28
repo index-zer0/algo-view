@@ -1,5 +1,5 @@
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
-import { Navbar, NavItem, DropdownMenu, SortAlgorithms, Link } from "./components";
+import { Navbar, NavItem, DropdownMenu, SortAlgorithms } from "./components";
 import "./App.css";
 
 
@@ -143,19 +143,19 @@ function langue(langueOn, langueOff) {
 			langueOff.classList.toggle('current_lang');
 		}
 
-		if (langueOn.innerHTML == 'Gr') {
+		if (langueOn.innerHTML === 'Gr') {
 			for (var i = 0; i < nb_gr; i++) {
 				gr_txt[i].style.display = 'block';
 			}
-			for (var i = 0; i < nb_en; i++) {
+			for (i = 0; i < nb_en; i++) {
 				en_txt[i].style.display = 'none';
 			}
 		}
-		else if (langueOn.innerHTML == 'En') {
-			for (var i = 0; i < nb_en; i++) {
+		else if (langueOn.innerHTML === 'En') {
+			for (i = 0; i < nb_en; i++) {
 				en_txt[i].style.display = 'block';
 			}
-			for (var i = 0; i < nb_gr; i++) {
+			for (i = 0; i < nb_gr; i++) {
 				gr_txt[i].style.display = 'none';
 			}
 		}
